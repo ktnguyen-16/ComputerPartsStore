@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="/lib/bootstrap/dist/**/*.min.css" asp-href-exclude="**/*-reboot*,**/*-grid*" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <link href="~/css/style.css" rel="stylesheet" />
+
+    <title>ComputerPartsStore</title>
+</head>
+
+
+
+<body>
+
+    <div class="navbar navbar-inverse bg-inverse" role="navigation">
+        <div class="row">
+            <a class="col navbar-brand" href="#">Computer Parts Store</a>
+            <div class="col-4 text-right">
+                @await Component.InvokeAsync("CartSummary")
+            </div>
+        </div>
+    </div>
+
+    <img src="https://www.fiercepc.co.uk/media/wysiwyg/CUSTOM-PC-BANNER.jpg" width="50%" height="auto" style="float:right" />
+
+
+    <div class="row m-1 p-1">
+        <div id="categories" class="col-3">
+            @await Component.InvokeAsync("NavigationMenu")
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer>
+        <a class="btn btn-primary" asp-controller="Test" asp-action="Test">Test</a>
+        <a class="btn btn-primary" asp-controller="AboutUs" asp-action="AboutUs">About Us</a>
+        <a class="btn btn-primary" asp-controller="ContactUs" asp-action="ContactUs">Contact Us</a>
+    </footer>
+
+
+</body>
+</html>
+
+
